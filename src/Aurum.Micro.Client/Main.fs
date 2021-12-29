@@ -7,6 +7,7 @@ open Bolero.Html
 open Bolero.Remoting
 open Bolero.Remoting.Client
 open Bolero.Templating.Client
+open Microsoft.Fast.Components.FluentUI
 
 type Page =
     | [<EndPoint "/">] Home
@@ -30,9 +31,10 @@ let update msg model =
     | SetPage page -> { model with page = page }, Cmd.none
 
 let view model dispatch =
-    div [] [
-        text $"display message {model.count}"
-    ]
+    concat [ div [ attr.classes [ "content" ] ] []
+             div [ attr.classes [ "sidebar" ] ] [
+                 text $"display message {model.count}"
+             ] ]
 
 let router: Router<Page, Model, Message> =
     { getEndPoint = fun m -> m.page

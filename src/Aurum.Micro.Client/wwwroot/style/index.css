@@ -1,0 +1,39 @@
+﻿.main {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: minmax(200px, 8fr) 92fr;
+    grid-template-areas: "sidebar content";
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.sidebar-icon {
+    order: 1;
+    flex: 0 1;
+}
+
+.sidebar-menu {
+    order: 2;
+    flex: 1 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.sidebar-footer {
+    order: 3;
+    flex: 0 1;
+}
+
+.home {
+    display: grid;
+}
+
+.routing {
+}
