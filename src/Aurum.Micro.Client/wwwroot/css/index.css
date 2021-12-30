@@ -1,4 +1,15 @@
-﻿.main {
+﻿body, html {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+.main {
+    height: 100%;
+    width: 100vw;
+    min-height: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
     display: grid;
     grid-template-rows: auto;
     grid-template-columns: minmax(200px, 8fr) 92fr;
@@ -8,8 +19,10 @@
 .sidebar {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
+    grid-area: sidebar;
+    gap: 10px;
 }
 
 .sidebar-icon {
@@ -29,6 +42,7 @@
 .sidebar-footer {
     order: 3;
     flex: 0 1;
+    text-align: center;
 }
 
 .home {
