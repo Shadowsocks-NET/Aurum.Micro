@@ -1,7 +1,8 @@
 namespace Aurum.Micro.Client
 
+open Aurum.Micro.Client.Services
 open Microsoft.AspNetCore.Components.WebAssembly.Hosting
-open Bolero.Remoting.Client
+open Microsoft.Extensions.DependencyInjection
 
 module Program =
 
@@ -10,10 +11,10 @@ module Program =
         let builder =
             WebAssemblyHostBuilder.CreateDefault(args)
 
-        builder.RootComponents.Add<Main.MyApp>("#main")
-
-        builder.Services.AddRemoting(builder.HostEnvironment)
+        builder.Services.AddSingleton<ITauriInteropService, TauriInteropService>()
         |> ignore
+
+        builder.RootComponents.Add<Main.MyApp>("#main")
 
         builder.Build().RunAsync() |> ignore
         0

@@ -4,6 +4,7 @@
     <TargetFramework>net6.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Services.fs"/>
     <Compile Include="Home.fs"/>
     <Compile Include="Model.fs"/>
     <Compile Include="Constants.fs"/>

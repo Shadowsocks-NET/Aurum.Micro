@@ -9,4 +9,6 @@ module Main =
         | [<EndPoint "/settings">] Settings
         | [<EndPoint "/help">] Help
 
-    type Model = { page: Page }
+    type Model =
+        { page: Page
+          coreVersion: string option }
