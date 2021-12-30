@@ -31,9 +31,25 @@ let update msg model =
     | SetPage page -> { model with page = page }, Cmd.none
 
 let view model dispatch =
-    concat [ div [ attr.classes [ "content" ] ] []
+    concat [ div [ attr.classes [ "content" ] ] [
+                 text "Content Placeholder"
+             ]
              div [ attr.classes [ "sidebar" ] ] [
-                 text $"display message {model.count}"
+                 div [ attr.classes [ "sidebar-icon" ] ] [
+                     text "Aurum.Micro"
+                 ]
+                 div [ attr.classes [ "sidebar-menu" ] ] [
+                     text "Menu Placeholder"
+                 ]
+                 div [ attr.classes [ "sidebar-footer" ] ] [
+                     text "Core"
+                     br []
+                     text "core_version_placeholder"
+                     br []
+                     text "Client"
+                     br []
+                     text $"{Constants.version}"
+                 ]
              ] ]
 
 let router: Router<Page, Model, Message> =
