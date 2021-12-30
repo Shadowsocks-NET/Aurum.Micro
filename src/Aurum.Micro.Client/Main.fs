@@ -4,30 +4,17 @@ open System
 open Elmish
 open Bolero
 open Bolero.Html
-open Bolero.Remoting
 open Bolero.Remoting.Client
 open Bolero.Templating.Client
 open Microsoft.Fast.Components.FluentUI
+open Aurum.Micro.Client.Model.Main
 
-type Page =
-    | [<EndPoint "/">] Home
-    | [<EndPoint "/group">] Group
-    | [<EndPoint "/settings">] Settings
-    | [<EndPoint "/help">] Help
+let init _ = { Model.page = Home }, Cmd.none
 
-type Model = { count: int; page: Page }
-
-let init _ = { count = 0; page = Home }, Cmd.none
-
-type Message =
-    | Increment
-    | Decrement
-    | SetPage of Page
+type Message = SetPage of Page
 
 let update msg model =
     match msg with
-    | Increment -> { model with count = model.count + 1 }, Cmd.none
-    | Decrement -> { model with count = model.count - 1 }, Cmd.none
     | SetPage page -> { model with page = page }, Cmd.none
 
 let view model dispatch =
