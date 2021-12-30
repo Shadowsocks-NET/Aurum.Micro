@@ -121,7 +121,9 @@ out
 
 # Nuxt.js build / generate output
 .nuxt
-dist
+
+# distribution files
+dist/**/*
 
 # Gatsby files
 .cache/
@@ -547,3 +549,5 @@ $RECYCLE.BIN/
 ### .NET Template
 bin/
 obj/
+
+!.gitkeep
