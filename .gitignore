@@ -551,3 +551,5 @@ bin/
 obj/
 
 !.gitkeep
+
+src/Aurum.Micro.Client/wwwroot/roboto
