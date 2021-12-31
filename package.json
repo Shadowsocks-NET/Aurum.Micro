@@ -1,10 +1,10 @@
 {
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "cpy node_modules/@fluentui/web-components/dist/web-components.min.js src/Aurum.Micro.Client/wwwroot/script"
+    "postinstall": "cpy '{300,400,500,700}*' files '../../../src/Aurum.Micro.Client/wwwroot/roboto' --cwd=node_modules/@fontsource/roboto --parents"
   },
   "dependencies": {
-    "@fluentui/web-components": "^2.1.3",
+    "@fontsource/roboto": "^4.5.1",
     "cpy-cli": "^3.1.1"
   },
   "license": "EPL-2.0"
